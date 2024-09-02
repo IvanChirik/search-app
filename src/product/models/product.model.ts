@@ -3,23 +3,38 @@ import { HydratedDocument } from "mongoose";
 
 export type ProductModelDocument = HydratedDocument<ProductModel>;
 
-@Schema()
+
+class ProductCharacteristic {
+    name: string;
+    value: string;
+}
+
+@Schema({ timestamps: true })
 export class ProductModel {
-    _id: string;
+    @Prop()
     image: string;
+    @Prop()
     title: string;
+    @Prop()
     price: number;
+    @Prop()
     oldPrice: number;
+    @Prop()
     credit: number;
+    @Prop()
     calculatedRating: number;
+    @Prop()
     description: string;
+    @Prop()
     advantages: string;
+    @Prop()
     disAdvantages: string;
+    @Prop([String])
     categories: string[];
+    @Prop([String])
     tags: string[];
-    characteristics: {
-        [key: string]: string;
-    }
+    @Prop([ProductCharacteristic])
+    characteristics: ProductCharacteristic[];
 }
 
 
