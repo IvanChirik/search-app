@@ -47,7 +47,7 @@ export class TopPageModel {
     category: string;
     @Prop({ type: HHDataSchema, required: false })
     hh?: HHData;
-    @Prop({ type: [TopPageAdvantage] })
+    @Prop({ type: [TopPageAdvantageSchema] })
     advantages: TopPageAdvantage[];
     @Prop()
     seoText: string;
