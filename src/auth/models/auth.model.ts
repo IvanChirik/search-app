@@ -9,7 +9,7 @@ export class AuthModel {
     @Prop({ required: true, unique: true })
     email: string;
     @Prop({ required: true })
-    passwordHsh: string;
+    passwordHash: string;
 }
 
 
