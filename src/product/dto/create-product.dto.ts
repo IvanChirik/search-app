@@ -4,8 +4,8 @@ import { IsArray, IsNumber, IsOptional, IsString, ValidateNested } from "class-v
 class ProductCharacteristicDto {
     @IsString()
     name: string;
-    @IsString()
-    value: string;
+    @IsNumber()
+    value: number;
 }
 
 export class CreateProductDto {
