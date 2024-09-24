@@ -21,11 +21,9 @@ export class ProductModel {
     @Prop()
     price: number;
     @Prop()
-    oldPrice: number;
+    oldPrice?: number;
     @Prop()
     credit: number;
-    @Prop()
-    calculatedRating: number;
     @Prop()
     description: string;
     @Prop()
