@@ -22,16 +22,25 @@ export class TopPageService {
         return this.topPageModel.findOne({ alias }).exec();
     }
 
+    async findByCategory(firstCategory: TopLevelCategory) {
+        return this.topPageModel.find({ firstLevelCategory: firstCategory }, { alias: 1, secondCategory: 1, title: 1 }).exec();
+    }
+
+    async findByText(text: string) {
+        return this.topPageModel.find({
+            $text: {
+                $search: text,
+                $caseSensitive: false
+            }
+        }).exec();
+    }
+
     async updateTopPageById(id: string, dto: CreateTopPageDto) {
         return this.topPageModel.findByIdAndUpdate(id, dto, { new: true }).exec();
     }
 
     async deleteTopPageById(id: string) {
         return this.topPageModel.findByIdAndDelete(id).exec();
-    }
-
-    async findByCategory(firstCategory: TopLevelCategory) {
-        return this.topPageModel.find({ firstLevelCategory: firstCategory }, { alias: 1, secondCategory: 1, title: 1 }).exec();
     }
 
 }
