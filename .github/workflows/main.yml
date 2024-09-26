@@ -12,8 +12,8 @@ jobs:
       - name: Publish to registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          registry: docker.phg.github.com
-          name: docker.phg.github.com/IvanChirik/search-app/search-app
+          registry: ghcr.io
+          name: ghcr.io/IvanChirik/search-app/search-app
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          tag: "develop"
+          tags: "develop"
