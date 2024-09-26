@@ -9,6 +9,7 @@ import { TopPageService } from './top-page.service';
     name: TopPageModel.name, schema: TopPageSchema
   }])],
   controllers: [TopPageController],
-  providers: [TopPageService]
+  providers: [TopPageService],
+  exports: [TopPageService]
 })
 export class TopPageModule { }
